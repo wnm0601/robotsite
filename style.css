@@ -60,10 +60,27 @@ nav a {
     font-weight: 500;
     font-size: 0.95rem;
     transition: var(--transition);
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: var(--transition);
 }
 
 nav a:hover {
     color: var(--accent-color);
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 main {
@@ -562,25 +579,38 @@ main {
 }
 
 .comment-input-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px 1fr 100px;
     gap: 10px;
+    margin-top: 15px;
 }
 
-.comment-input-group input[id="commentAuthor"] {
-    width: 100px;
+.comment-input-group input {
+    height: 45px;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-family: inherit;
 }
 
-.comment-input-group input[id="commentText"] {
-    flex-grow: 1;
+.comment-input-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }
 
 .comment-input-group button {
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 0 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.comment-input-group button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 /* Footer */

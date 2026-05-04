@@ -62,7 +62,78 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     setupEventListeners();
+    setupClubTabs();
+    setupSmoothScroll();
 });
+
+function setupSmoothScroll() {
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.onclick = function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        };
+    });
+}
+
+function setupClubTabs() {
+    const clubData = {
+        "MAS": {
+            title: "MAS (Micro-Autonomous System)",
+            desc: "MAS는 마이크로 로봇 및 자율 주행 시스템을 연구하는 동아리입니다. 소형 센서와 임베디드 설계를 통해 정밀한 로봇 제어 기술을 습득하며, 국내외 로봇 경진대회에서 우수한 성과를 거두고 있습니다.",
+            img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=500"
+        },
+        "MCA": {
+            title: "MCA (Mobile Control & Automation)",
+            desc: "MCA는 모바일 로봇과 제어 알고리즘을 전문적으로 다룹니다. 자율 주행 플랫폼을 직접 설계하고 장애물 회피, 경로 탐색 등 상용화 가능한 로봇 소프트웨어 기술을 연구하는 열정적인 팀입니다.",
+            img: "https://images.unsplash.com/photo-1485594053913-c9d78c001ec8?auto=format&fit=crop&q=80&w=500"
+        },
+        "MoAS": {
+            title: "MoAS",
+            desc: "MoAS는 모빌리티 아키텍처 및 시스템을 연구하는 동아리입니다. 차세대 이동 수단의 소프트웨어 구조를 설계하고 실습하며 미래형 교통 수단의 핵심 기술을 배웁니다.",
+            img: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&q=80&w=500"
+        },
+        "SMART": {
+            title: "SMART (Smart Factory System)",
+            desc: "SMART는 스마트 팩토리와 시뮬레이션 시스템을 연구합니다. 공정 자동화와 로봇 팔의 정밀 제어를 학습하며 산업 현장의 디지털 트랜스포메이션을 이끌 인재들이 모여있습니다.",
+            img: "https://images.unsplash.com/photo-1565515267484-9097970d4d39?auto=format&fit=crop&q=80&w=500"
+        },
+        "UR": {
+            title: "UR (Ubiquitous Robot)",
+            desc: "UR은 로봇 설계, 제작, 프로그래밍을 실습하여 이론과 실무를 연결하는 동아리입니다. 팀워크를 기반으로 창의적인 로봇을 만들며, 기계 설계와 인공지능 협업 환경을 지향합니다.",
+            img: "https://images.unsplash.com/photo-1558444479-27060599026d?auto=format&fit=crop&q=80&w=500"
+        },
+        "지능형로봇": {
+            title: "지능형로봇 (AI Robot)",
+            desc: "지능형로봇 동아리는 딥러닝과 강화학습을 로봇에 적용하는 연구를 합니다. 로봇이 스스로 인지하고 판단할 수 있도록 만드는 최신 AI 기술을 실험하고 결과물을 만들어냅니다.",
+            img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=500"
+        }
+    };
+
+    const tabs = document.querySelectorAll('.tabs button');
+    const clubTitle = document.querySelector('.club-text h4');
+    const clubDesc = document.querySelector('.club-text p');
+    const clubImg = document.querySelector('.club-img img');
+
+    tabs.forEach(tab => {
+        tab.onclick = () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const name = tab.innerText;
+            if (clubData[name]) {
+                clubTitle.innerText = clubData[name].title;
+                clubDesc.innerText = clubData[name].desc;
+                clubImg.src = clubData[name].img;
+            }
+        };
+    });
+}
 
 function setupEventListeners() {
     // Open Write Modal
