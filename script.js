@@ -106,7 +106,7 @@ function setupClubTabs() {
         "UR": {
             title: "UR (Ubiquitous Robot)",
             desc: "UR은 로봇 설계, 제작, 프로그래밍을 실습하여 이론과 실무를 연결하는 동아리입니다. 팀워크를 기반으로 창의적인 로봇을 만들며, 기계 설계와 인공지능 협업 환경을 지향합니다.",
-            img: "https://images.unsplash.com/photo-1558444479-27060599026d?auto=format&fit=crop&q=80&w=500"
+            img: "ur.png"
         },
         "지능형로봇": {
             title: "지능형로봇 (AI Robot)",
