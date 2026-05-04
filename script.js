@@ -228,6 +228,19 @@ function setupEventListeners() {
             }
         };
     }
+
+    // 공유 버튼 클릭 시 링크 복사 기능
+    const shareBtn = document.getElementById('shareBtn');
+    if (shareBtn) {
+        shareBtn.onclick = () => {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('링크가 클립보드에 복사되었습니다! 🎉');
+            }).catch(err => {
+                console.error('복사 실패:', err);
+            });
+        };
+    }
 }
 
 // --- Board Logic ---
