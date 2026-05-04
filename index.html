@@ -19,7 +19,7 @@
                     <li><a href="#professors">교수소개</a></li>
                     <li><a href="#album">학과앨범</a></li>
                     <li><a href="#notice">학과공지</a></li>
-                    <li><a href="#board">자유게시판</a></li>
+                    <li><a href="board.html">자유게시판</a></li>
                 </ul>
             </nav>
         </div>
@@ -143,100 +143,7 @@
             </div>
         </section>
 
-        <!-- Free Board Section -->
-        <section id="board" class="board-section">
-            <div class="board-container">
-                <div class="board-header">
-                    <h2>자유게시판</h2>
-                    <p>학생들의 자유로운 소통 공간입니다.</p>
-                </div>
-
-                <div class="board-controls">
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="글 제목 또는 내용 검색...">
-                        <button id="searchBtn"><i class="fas fa-search"></i></button>
-                    </div>
-                    <button id="writePostBtn" class="primary-btn">글쓰기</button>
-                </div>
-
-                <div class="post-list-container">
-                    <table class="post-table">
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>날짜</th>
-                                <th>댓글</th>
-                            </tr>
-                        </thead>
-                        <tbody id="postList">
-                            <!-- Posts will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <!-- Modal for Writing/Editing Post -->
-    <div id="postModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modalTitle">새 글 작성</h3>
-            <form id="postForm">
-                <input type="hidden" id="postId">
-                <div class="form-group">
-                    <label for="title">제목</label>
-                    <input type="text" id="title" required>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="author">작성자</label>
-                        <input type="text" id="author" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">비밀번호 (수정/삭제용)</label>
-                        <input type="password" id="password" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="content">내용</label>
-                    <textarea id="content" rows="10" required></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="save-btn">저장</button>
-                    <button type="button" class="cancel-btn">취소</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal for Viewing Post -->
-    <div id="viewModal" class="modal">
-        <div class="modal-content view-content">
-            <span class="close-view">&times;</span>
-            <div id="postDetail">
-                <!-- Post details will be loaded here -->
-            </div>
-            <div class="post-actions">
-                <button id="editBtn" class="action-btn">수정</button>
-                <button id="deleteBtn" class="action-btn delete">삭제</button>
-            </div>
-            <hr>
-            <div class="comment-section">
-                <h4>댓글</h4>
-                <div id="commentList"></div>
-                <form id="commentForm">
-                    <div class="comment-input-group">
-                        <input type="text" id="commentAuthor" placeholder="이름" required>
-                        <input type="text" id="commentText" placeholder="댓글을 입력하세요..." required>
-                        <button type="submit">등록</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <p>&copy; 2024 동양미래대학교 로봇소프트웨어과. All Rights Reserved.</p>
