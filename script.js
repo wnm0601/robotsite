@@ -91,7 +91,7 @@ function setupClubTabs() {
         "MCA": {
             title: "MCA (Mobile Control & Automation)",
             desc: "MCA는 모바일 로봇과 제어 알고리즘을 전문적으로 다룹니다. 자율 주행 플랫폼을 직접 설계하고 장애물 회피, 경로 탐색 등 상용화 가능한 로봇 소프트웨어 기술을 연구하는 열정적인 팀입니다.",
-            img: "https://images.unsplash.com/photo-1485594053913-c9d78c001ec8?auto=format&fit=crop&q=80&w=500"
+            img: "mca.png"
         },
         "MoAS": {
             title: "MoAS",
@@ -101,7 +101,7 @@ function setupClubTabs() {
         "SMART": {
             title: "SMART (Smart Factory System)",
             desc: "SMART는 스마트 팩토리와 시뮬레이션 시스템을 연구합니다. 공정 자동화와 로봇 팔의 정밀 제어를 학습하며 산업 현장의 디지털 트랜스포메이션을 이끌 인재들이 모여있습니다.",
-            img: "https://images.unsplash.com/photo-1565515267484-9097970d4d39?auto=format&fit=crop&q=80&w=500"
+            img: "smart.png"
         },
         "UR": {
             title: "UR (Ubiquitous Robot)",

@@ -132,18 +132,29 @@ main {
 
 .hero-info-bar {
     display: flex;
-    gap: 15px;
-    background: rgba(255,255,255,0.1);
+    flex-wrap: nowrap;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    padding: 0.8rem 1.5rem;
+    padding: 12px 25px;
     border-radius: 50px;
-    font-size: 0.85rem;
-    margin-top: auto;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: fit-content;
+}
+
+.hero-info-bar span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    white-space: nowrap;
 }
 
 .hero-info-bar i {
-    margin-right: 5px;
     color: var(--accent-color);
+    font-size: 1.1rem;
 }
 
 .hero-image img {
@@ -278,11 +289,6 @@ main {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-}
-
-.tabs button.special {
-    background: #000;
-    color: white;
 }
 
 .club-detail {
